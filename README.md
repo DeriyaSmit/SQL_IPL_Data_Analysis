@@ -9,7 +9,7 @@ Dataset Information
  fact_bowling_summary : Data of the Bowler
 
 
-10 Questions in which i used advance SQL Topics
++10 Questions in which i used advance SQL Topics
 
  <br>1.Top 10 Batsman with highest strike_rate
  <br>2.Batsman with the highest strike rate at every position
