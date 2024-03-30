@@ -11,8 +11,8 @@ Dataset Information
 
 # **10 Questions in which i used advance SQL Topics**
 
- <br>1.Top 10 Batsman with highest strike_rate
- &nbsp;
+ <h1><br>1.Top 10 Batsman with highest strike_rate
+ 
  <br>2.Batsman with the highest strike rate at every position
  <br>3.Top 2 batsmn from each team in a match
  <br>4.Top 10 Bowler with most number of wicket
