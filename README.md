@@ -2,7 +2,7 @@
 
 I conducted a comprehensive case study on a dataset that contained information about IPL match played between year 2021 to 2023 using SQL and Python . Python for loading the file in the SQL and SQL for data anlysis . The dataset includes Four tables: dim_match_summary , dim_players , fact_bating_summary , fact_bowling_summary
 
-Dataset Information
+# Dataset Information
  dim_match_summary  : Have information of the match 
  dim_players : Have detail information about the player
  fact_bating_summary : Data of the batsman 
