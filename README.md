@@ -3,19 +3,7 @@
 I conducted a comprehensive case study on a dataset that contained information about IPL match played between year 2021 to 2023 using SQL and Python . Python for loading the file in the SQL and SQL for data anlysis . The dataset includes Four tables: dim_match_summary , dim_players , fact_bating_summary , fact_bowling_summary
 
 # Dataset Information
- <br><div style="background-color: white; padding: 10px;">
-    Your text goes here
-</div>
-
-.white-box {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc; /* Optional: Add a border */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-}
-
-  : Have information of the match 
+ <br>dim_match_summary  : Have information of the match 
  <br>dim_players : Have detail information about the player
  <br>fact_bating_summary : Data of the batsman 
  <br>fact_bowling_summary : Data of the Bowler
