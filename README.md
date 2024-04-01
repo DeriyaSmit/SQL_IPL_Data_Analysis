@@ -11,7 +11,7 @@ I conducted a comprehensive case study on a dataset that contained information a
 
 # **14 Questions in which i used advance SQL Topics**
 
- <br>&nbsp1;.Top 10 Batsman with highest strike_rate
+ <br>.Top 10 Batsman with highest strike_rate<br>&nbsp1;
  <br>&nbsp2;.Batsman with the highest strike rate at every position
  <br>&nbsp3;.Top 2 batsmn from each team in a match
  <br>&nbsp4;.Top 10 Bowler with most number of wicket
