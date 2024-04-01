@@ -21,5 +21,10 @@ I conducted a comprehensive case study on a dataset that contained information a
  <br>8.Team winning percentage while Bowling_1 and Batting_1
  <br>9.Top 10 bowlers based on past 3 years bowling average
 <br>10.Top 10 Batsman with highest Batting average
+<br>11.On which Day of the week do virat and rohit are more charged up to  hit more six
+<br>12.On which Day of the week Bumrah and Shami are more thirsty for taking wicket
+<br>13.In Super Kings which player has contribute more in winning the match
+<br>14.Which team has has the worst bowling average against Royal
+
 
 
