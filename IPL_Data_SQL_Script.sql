@@ -151,6 +151,69 @@ having sum(balls)>=60
 order by batting_average desc
 limit 10
 
+/* 11-> On which Day of the week do virat and rohit are more charged up to  hit more six */
+with RoVi as (
+SELECT batsmanName,
+       dayname(str_to_date(matchDate,'%b %d, %Y')) as day_of_the_week,
+       sum(6s) as total_6s,
+       rank() over(partition by batsmanName order by sum(6s) desc) as rn
+FROM ipl_data.fact_bating_summary a
+join dim_match_summary b
+using (match_id)
+where batsmanName in ("RohitSharma","ViratKohli")
+group by batsmanName,day_of_the_week)
+
+select batsmanName ,day_of_the_week,total_6s
+from RoVi 
+where rn=1 
+
+/* 12-> On which Day of the week Bumrah and Shami are more thirsty for taking wicket */ 
+with MoJas as (
+SELECT bowlerName,
+       dayname(str_to_date(matchDate,'%b %d, %Y')) as day_of_the_week,
+       sum(wickets) as total_wickets,
+       rank() over(partition by bowlerName order by sum(wickets) desc) as rn
+FROM ipl_data.fact_bowling_summary a
+join dim_match_summary b
+using (match_id)
+where bowlerName in ('JaspritBumrah','MohammedShami')
+group by bowlerName,day_of_the_week)
+
+select bowlerName ,day_of_the_week,total_wickets
+from MoJas
+where rn=1 
+
+/* 13-> In Super Kings which player has contribute more in winning the match */
+SELECT batsmanName,
+	   round(count(batsmanName)/(select count(winner) as total_win
+	   from dim_match_summary
+	   where winner='Super Kings')*100,0)   as "win%"
+FROM ipl_data.dim_match_summary a
+join fact_bating_summary b
+using(match_id)
+where winner='Super Kings' and runs>30
+group by 1
+order by "win%" desc
+limit 1
+
+/* 14-> which team has has the worst bowling average against Royal */
+with cte as(
+SELECT 
+    bowlingTeam,
+    CASE 
+        WHEN SUBSTRING_INDEX(trim(matchh) , ' Vs', 1)=bowlingTeam THEN SUBSTRING_INDEX(trim(matchh), 'Vs ', -1)
+        WHEN SUBSTRING_INDEX(trim(matchh), 'Vs ', -1)=bowlingTeam THEN SUBSTRING_INDEX(trim(matchh), ' Vs', 1)
+    END AS battingTeam,
+    sum(runs) as runs,
+    sum(wickets) as wickets,
+    sum(runs)/sum(wickets) as bowling_average,
+    rank() over(order by sum(runs)/sum(wickets) desc) as rn
+FROM
+    ipl_data.fact_bowling_summary a
+group by 1,2)
+
+select bowlingTeam , battingTeam , runs , wickets ,bowling_average from cte
+where rn=1
 
 
 
